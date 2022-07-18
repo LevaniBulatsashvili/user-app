@@ -1,0 +1,102 @@
+#user {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  img {
+    margin: 20px;
+    max-width: 300px;
+    height: auto;
+    width: 87%;
+  }
+  .info {
+    width: 30rem;
+    margin: 20px;
+    height: 203px;
+    .title {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid black;
+    .fullName {
+      font-weight: bold;
+    }
+  }
+  .address {
+    margin: 20px;
+    .title {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    border: 1px solid black;
+    padding: 20px;
+    div:nth-child(2) {
+      font-weight: bold;
+    }
+  }
+}
+
+div:nth-child(2) {
+  h2 {
+    font-weight: bold;
+  }
+}
+
+.friends {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 3%;
+  .friendInfo {
+    cursor: pointer;
+    border: 1px solid black;
+    max-width: 80%;
+    margin: 1rem 0;
+    img {
+      max-width: 100%;
+      height: auto;
+      width: auto;
+    }
+    div {
+      margin: 5px 0 5px 5px;
+    }
+    div:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+.spin {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 30px auto;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top-color: #ff8800;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  to { transform: rotateZ(360deg) }
+}
+
+@media only screen and (max-width: 1000px) {
+  .friends {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .friends {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .friends {
+    grid-template-columns: 1fr;
+  }
+}
+

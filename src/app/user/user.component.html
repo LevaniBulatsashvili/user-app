@@ -1,0 +1,41 @@
+<div *ngIf="user">
+  <div id="user">
+    <img src="{{ user.imageUrl }}" alt="" >
+    <div class="info">
+      <div class="title">Info</div>
+      <div>
+        <div class="fullName">{{ user.prefix }} {{ user.name }} {{ user.lastName}}</div>
+        <div>{{ user.title }}</div>
+      </div>
+      <div>
+        <div>Email: {{ user.email }}</div>
+        <div>Ip Address: {{ user.ip }}</div>
+        <div>Job Area: {{ user.jobArea }}</div>
+        <div>Job Type: {{ user.jobType }}</div>
+      </div>
+    </div>
+    <div class="address">
+      <div class="title">Adress</div>
+      <div>{{ user.company.name }}</div>
+      <div>City: {{ user.address.city }}</div>
+      <div>Country: {{ user.address.country }}</div>
+      <div>State: {{ user.address.state }}</div>
+      <div>Street Address: {{ user.address.streetAddress }}</div>
+      <div>Zip: {{ user.address.zipCode }}</div>
+    </div>
+  </div>
+  <div><h2>Friends:</h2></div>
+  <div class="friends">
+    <div *ngFor="let friend of friends">
+      <div (click)="visitFriend(friend)" class="friendInfo">
+        <img src="{{ friend.imageUrl }}" alt="" >
+        <div>
+          <div>{{ friend.prefix }} {{ friend.name }} {{ friend.lastName}}</div>
+          <div>{{ friend.title }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading" class="spin"></div>
+

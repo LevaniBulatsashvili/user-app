@@ -1,0 +1,12 @@
+<div id="users">
+  <div *ngFor="let user of users">
+    <div (click)="visitUser(user)" class="info">
+      <img src="{{ user.imageUrl }}" alt="" >
+      <div>
+        <div>{{ user.prefix }} {{ user.name }} {{ user.lastName}}</div>
+        <div>{{ user.title }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spin" *ngIf="loading"></div>
